@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/w3.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registerForm" onsubmit="return registerUser()">
+            <h2>Registro</h2>
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirmPassword">Confirmar Contraseña</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <script src="assets/js/register.js"></script>
+</body>
+</html>
