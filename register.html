@@ -4,29 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
 </head>
 <body>
-    <div class="container">
+    <header id="header">
+        <div class="center">
+            <!-- LOGO -->
+            <div id="logo">
+                <img src="assets/images/PEAK.jpg" class="app-logo" alt="Logotipo" />
+            </div>
+
+            <!-- MENU -->
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>                    
+                </ul>
+                <button class="burger-menu" id="burger-menu">
+                    <ion-icon class="bars" name="menu-outline"></ion-icon>
+                </button>
+            </nav>
+
+            <!-- LIMPIAR FLOTADOS -->
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <div class="container my-5">
         <form id="registerForm" onsubmit="return registerUser()">
             <h2>Registro</h2>
-            <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
-            
-            <label for="confirmPassword">Confirmar Contraseña</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-            
-            <button type="submit">Registrar</button>
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Contraseña</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="button" onclick="window.location.href='index.html'" class="btn btn-secondary ml-2">Volver</button>
         </form>
     </div>
 
+    <footer id="footer">
+        <div class="center">
+            <p class="copy">
+                &copy; Copyright 2024
+            </p>
+            <p class="copy">
+                Desarrollado por 
+                <a href="https://www.linkedin.com/in/alejandrofernandezb/" target="_blank">Alejandro Fernández Barrientos</a>
+            </p>
+        </div>
+    </footer>
+
     <script src="assets/js/register.js"></script>
+    <!-- Ion icons scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
