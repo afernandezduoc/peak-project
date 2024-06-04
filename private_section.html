@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección Privada</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/w3.css">
+    <script src="assets/js/private_section.js"></script>
+</head>
+<body onload="checkAuth()">
+    <div class="container">
+        <h2>Bienvenido a la Sección Privada</h2>
+        <div>
+            <p>Aquí están tus archivos PDF:</p>
+            <ul>
+                <li><a href="assets/pdf/report1.pdf" target="_blank">Reporte 1</a></li>
+                <li><a href="assets/pdf/report2.pdf" target="_blank">Reporte 2</a></li>
+            </ul>
+        </div>
+        <button onclick="logout()">Cerrar Sesión</button>
+    </div>
+</body>
+</html>

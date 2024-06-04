@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Usuarios</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/w3.css">
+    <script src="assets/js/admin_section.js"></script>
+</head>
+<body onload="checkAdminAuth()">
+    <div class="container">
+        <h2>Administración de Usuarios</h2>
+        <div id="userList"></div>
+        <button onclick="logout()">Cerrar Sesión</button>
+        <h3>Agregar Usuario</h3>
+        <form id="addUserForm" onsubmit="return addUser()">
+            <label for="newUsername">Usuario</label>
+            <input type="text" id="newUsername" name="username" required>
+            <label for="newEmail">Correo Electrónico</label>
+            <input type="email" id="newEmail" name="email" required>
+            <label for="newPassword">Contraseña</label>
+            <input type="password" id="newPassword" name="password" required>
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+</body>
+</html>

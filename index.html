@@ -47,32 +47,28 @@
                             style="width:auto; display: none;"></button>
                     </li>
                 </ul>
-                <div id="login" class="modal">
-                    <form class="modal-content animate" onsubmit="return login()">
-                        <div class="imgcontainer">
-                            <span onclick="document.getElementById('login').style.display='none'" class="close"
-                                title="Close Modal">&times;</span>
-                        </div>
-                        <div class="container">
-                            <label for="uname"><b>Usuario</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" id="username" required>
-                            <label for="psw"><b>Contraseña</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
-                            <button type="submit">Entrar</button>
-                            <!--<label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label> -->
-                        </div>
-                        <div class="container" style="background-color:#f1f1f1">
-                            <!--<button type="button" onclick="document.getElementById('id01').style.display='none'"
-                                class="cancelbtn">Cancel</button> -->
-                            <div><a href="register.html" style="color: var(--secondary-color);">Registrate aquí</a></div>
-                            <hr>
-                            <div>Olvidaste la <a href="#"
-                                    style="color: var(--secondary-color);">contraseña?</a></div>
-                        </div>
-                    </form>
-                </div>
+                <!-- Login Modal in index.html -->
+<div id="login" class="modal">
+    <form class="modal-content animate" onsubmit="return login()">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('login').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+        </div>
+        <div class="container">
+            <label for="uname"><b>Usuario</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+            <button type="submit">Entrar</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <div><a href="register.html" style="color: var(--secondary-color);">Registrate aquí</a></div>
+            <hr>
+            <div>Olvidaste la <a href="password_recovery.html" style="color: var(--secondary-color);">contraseña?</a></div>
+        </div>
+    </form>
+</div>
+
                 <div id="userId" class="modal">
                     <form class="modal-content animate">
                         <div class="imgcontainer">
@@ -156,7 +152,7 @@
             Puerto Natales, Chile<br>
             Phone: +56 912345678<br>
             <address>
-                <a href="mailto:info@peak.cl">Email</a><br>
+                <a href="mailto:info@correo.cl">Email</a><br>
             </address>
             <p class="w3-opacity w3-center"><i>¡También nos puedes escribir en este formulario!</i></p>
         </div>

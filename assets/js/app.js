@@ -34,12 +34,6 @@ function loadUser() {
   }
 }
 
-// Logout
-function logout() {
-  sessionStorage.removeItem("jwt");
-  window.location.href = "./index.html";
-}
-
 // Carousel for photo slider
 var myIndex = 0;
 carousel();
@@ -109,46 +103,49 @@ window.onclick = function (event) {
   }
 };
 
+// Inicializar usuarios en localStorage
+if (!localStorage.getItem('users')) {
+  const users = [
+      {
+          username: 'admin',
+          email: 'admin@admin.com',
+          password: 'admin'
+      }
+  ];
+  localStorage.setItem('users', JSON.stringify(users));
+}
+
+
 // LOGIN to access reports
 function login() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-  const xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "https://www.peak.cl/assets/php/login.php");
-  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xhttp.send(
-    JSON.stringify({
-      username: username,
-      password: password,
-    })
-  );
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4) {
-      const objects = JSON.parse(this.responseText);
-      if (objects["status"] == "ok") {
-        sessionStorage.setItem("jwt", objects["accessToken"]);
-        Swal.fire({
-          text: objects["message"],
-          icon: "success",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#09becf",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "./report.html";
-          }
-        });
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const user = users.find(user => user.username === username && user.password === password);
+
+  if (user) {
+      localStorage.setItem('authenticated', 'true');
+      localStorage.setItem('username', username);
+      if (username === 'admin') {
+          window.location.href = 'admin_section.html';
       } else {
-        Swal.fire({
-          text: objects["message"],
-          icon: "error",
-          confirmButtonText: "OK",
-        });
+          window.location.href = 'private_section.html';
       }
-    }
-  };
+  } else {
+      alert('Credenciales incorrectas');
+  }
+
   return false;
 }
+
+function logout() {
+  localStorage.removeItem('authenticated');
+  localStorage.removeItem('username');
+  window.location.href = 'index.html';
+}
+
+
 
 // Save message in contact form
 function saveMessage() {
