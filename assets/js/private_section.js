@@ -5,3 +5,9 @@ function checkAuth() {
         window.location.href = 'index.html';
     }
 }
+
+function logout() {
+    localStorage.removeItem('authenticated');
+    localStorage.removeItem('username');
+    window.location.href = 'index.html';
+}
